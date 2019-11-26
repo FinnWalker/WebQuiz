@@ -220,7 +220,7 @@ html {
 }
 body {
   margin: 0;
-  background: white;
+  background: #030303;
   height: 100%;
 }
 #app {
