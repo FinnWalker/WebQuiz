@@ -43,7 +43,8 @@ export default {
     }
   },
   mounted() {
-    document.getElementById('ambient-clip').volume = 1;
+    //document.getElementById('ambient-clip').volume = 1;
+    document.getElementById('ambient-clip').play();
     if (this.$props.score < 5) {
       this.message = "SO, YOU SCORED " + this.$props.score + "/8";
       this.message2 = "LEARN MORE AT SAFET360.COM.AU";

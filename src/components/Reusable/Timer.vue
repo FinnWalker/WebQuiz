@@ -1,8 +1,6 @@
 <template>
   <div id="timer">
-    <audio id="timer-clip" autoplay>
-      <source src="../../assets/audio/TimerCountDown.wav" type="audio/wav" />
-    </audio>
+    
     <svg width="100%" height="100%" viewBox="0 0 100 100">
       <circle id="circle" cx="50" cy="50px" r="40px" />
       <circle

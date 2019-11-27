@@ -25,6 +25,9 @@ export default {
   methods: {
     darkness() {
       this.$emit("darkness");
+      document.getElementById("timer-clip").pause();
+      document.getElementById("timer-clip").currentTime = 0;
+      document.getElementById("timer-clip").play();
     }
   }
 };

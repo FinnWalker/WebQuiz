@@ -25,6 +25,7 @@ export default {
   },
   methods: {
     darkness() {
+      document.getElementById('ambient-clip').play();
       this.$emit("darkness");
     }
   },

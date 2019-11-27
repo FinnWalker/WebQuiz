@@ -205,6 +205,7 @@ export default {
 input[type="checkbox"] {
   -webkit-appearance: none;
   outline: none;
+  border: none;
   width: 9.75%;
   height: 15.5%;
   margin: auto;
@@ -214,6 +215,7 @@ input[type="checkbox"] {
   border-radius: 15%;
   position: absolute;
   background: rgba(255, 255, 255, 0);
+  z-index: 10;
 }
 
 #box-1 {

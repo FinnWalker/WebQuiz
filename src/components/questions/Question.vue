@@ -111,10 +111,11 @@ export default {
   },
   methods: {
     playSelect() {
-      document.getElementById('correct-clip').pause();
-      document.getElementById('correct-clip').currentTime = 0;
-      document.getElementById('correct-clip').play();
+      document.getElementById("correct-clip").pause();
+      document.getElementById("correct-clip").currentTime = 0;
+      document.getElementById("correct-clip").play();
     },
+    
     timeout() {
       if (!this.transitioning) {
         this.answerQuestion("timeout");
@@ -136,6 +137,7 @@ export default {
             document.getElementById("question").style.pointerEvents = "all";
             this.$emit("next");
             this.state = "active";
+
             Velocity(
               document.getElementById("darkness-2"),
               { opacity: 0 },
@@ -146,10 +148,11 @@ export default {
       );
     },
     answerQuestion(type) {
-      if(type==='correct' && this.question.number !== 3) {
+      document.getElementById("timer-clip").pause();
+      if (type === "correct" && this.question.number !== 3) {
         this.playSelect();
-      } else if (type==='incorrect' && this.question.number !== 3) {
-        document.getElementById('incorrect-clip').play();
+      } else if (type === "incorrect" && this.question.number !== 3) {
+        document.getElementById("incorrect-clip").play();
       }
       this.transitioning = true;
       document.getElementById("question").style.pointerEvents = "none";
@@ -180,7 +183,8 @@ export default {
     }
   },
   mounted() {
-    document.getElementById('ambient-clip').volume = 0.25;
+    //document.getElementById('ambient-clip').volume = 0.25;
+    document.getElementById("ambient-clip").pause();
   }
 };
 </script>

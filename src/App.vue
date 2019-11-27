@@ -1,9 +1,12 @@
 <template>
   <div id="app">
+    <audio id="timer-clip">
+      <source src="./assets/audio/TimerCountDown.wav" type="audio/wav" />
+    </audio>
     <audio id="select-clip">
       <source src="./assets/audio/SelectSound.wav" type="audio/wav" />
     </audio>
-    <audio id="ambient-clip" autoplay loop>
+    <audio id="ambient-clip" loop>
       <source src="./assets/audio/ambient.mp3" type="audio/mp3" />
     </audio>
     <div id="background" />
@@ -127,12 +130,17 @@ export default {
   },
   methods: {
     playSelect() {
-      document.getElementById('select-clip').pause();
-      document.getElementById('select-clip').currentTime = 0;
-      document.getElementById('select-clip').play();
+      document.getElementById("select-clip").pause();
+      document.getElementById("select-clip").currentTime = 0;
+      document.getElementById("select-clip").play();
+    },
+    playCountdown() {
+      document.getElementById("timer-clip").pause();
+      document.getElementById("timer-clip").currentTime = 0;
+      document.getElementById("timer-clip").play();
     },
     darkness() {
-      this.playSelect()
+      this.playSelect();
       Velocity(
         document.getElementById("darkness"),
         { opacity: 1 },
@@ -174,6 +182,7 @@ export default {
         this.lightness();
       } else {
         this.question += 1;
+        this.playCountdown()
       }
     },
     restart() {
